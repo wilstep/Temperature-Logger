@@ -27,6 +27,8 @@ This is a 12 bit ADC so I assume the value may be from 0 - 4095
 
 The circuit is very simple, put the resistor and LM335Z in series. For the LM335Z leave the ADJ terminal open and connect its +ve termianal to the resistor. Now connect the 5v source from the BBB to the resistor and the ground from the BBB to the -ve terminal. Make a second connection for the +ve terminal of the LM335Z to the ADC on the BBB.
 
+The LM335Z when wired up this way will change voltage to the ADC at a gradiant of 10mV/deg celcius.This lets us have slightly more than 22 quantized numbers from the ADC per degree
+
 #### The Code
 
 The code is a simple C program and straight forward to compile.
