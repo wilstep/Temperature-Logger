@@ -8,7 +8,7 @@ To enable the Analogue to Digital Converter (ADC) I issued the following from th
 `sh -c "echo 'BB-ADC' > /sys/devices/platform/bone_capemgr/slots"`
 
 To make this permanent (remains after a reboot) insert the line:
-cape_enable=bone_capemgr.enable_partno=BB-ADC
+`cape_enable=bone_capemgr.enable_partno=BB-ADC`
 into the file 
 `/boot/uEnv.txt`
 
