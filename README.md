@@ -1,5 +1,5 @@
 # Temperature-Logger
-Temperature logging program for the BeagleBone Black
+Temperature logging program and device circuit for the BeagleBone Black
 
 #### What you need
 1 off BeagleBone, 1 off Breadboard, 1 off LM335Z temperature sensor linear ic \**, 1 off LM358 Low power dual op-amp linear ic, various resistors, 1 off 10 or 25 turn 10k trim pot, 1 off multimeter
