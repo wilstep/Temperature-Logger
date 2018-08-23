@@ -4,7 +4,7 @@ Temperature logging program and device circuit for the BeagleBone Black (BBB). T
 #### What you need
 1 off BeagleBone, 1 off Breadboard, 1 off LM335Z temperature sensor linear ic \**, 1 off LM358 Low power dual op-amp linear ic, various resistors, 1 off 10 or 25 turn 10k trim pot, 1 off multimeter
 
-\**This was just the temperature sensor available at my local Jaycar store. One could easily adopt for a different temperature sensor (would require minor changes to the code) but be careful not to put more than 1.8v into the ADC
+\**This was just the temperature sensor available at my local Jaycar store. One could easily adopt for a different temperature sensor (would require minor changes to the circuit) but be careful not to put more than 1.8v into the ADC
 
 #### The BBB ADC
 This works on my BeagleBone Black, which is running Debian with kerel 4.1.15-ti-rt-r43
