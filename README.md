@@ -25,13 +25,13 @@ This is a 12 bit ADC so I assume the value may be from 0 - 4095
 
 #### The Circuit
 
-The circuit is (circuit.JPG) a simple one, which makes use of two op-amps, the first as a voltage follower and the second to shift and amplify the signal. For the LM335Z (temperature sensor) leave the ADJ terminal open and connect its +ve terminal to the resistor. Now connect the 5v source from the BBB to the resistor and the ground from the BBB to the -ve terminal. Make a second connection for the +ve terminal of the LM335Z to the ADC on the BBB.
+The circuit (circuit.JPG) is a simple one, which makes use of two op-amps, the first as a voltage follower and the second to shift and amplify the signal. For the LM335Z (temperature sensor) leave the ADJ terminal unconnected. Then connect its +ve terminal to the resistor. Now connect the 5v source from the BBB to the other end of the resistor and the ground from the BBB to the -ve terminal of the LM335Z. Make a second connection from the +ve terminal of the LM335Z to the first op-amp.
 
-The LM335Z when wired up this way will change voltage to the ADC at a gradient of approximately 15mV/deg Celsius. This lets us have slightly more than 30 quantised numbers from the ADC per degree. There is nothing to stop the signal going above 1.8v if the sensor gets too hot, so be careful. This will occur somewhere around 70 deg Celsius.
+The LM335Z when wired up this way will change voltage to the ADC at a gradient of approximately 10mV/deg Celsius which is then amplified to 15mV/deg. This lets us have slightly more than 30 quantised numbers from the ADC per degree. There is nothing to stop the signal going above 1.8v if the sensor gets too hot, so be careful. This will occur somewhere around 70 deg Celsius.
 
 #### The Code
 
 The code is a simple C program and straight forward to compile;
 `gcc tlog.c -lm -o tlog`.
 You will need to calibrate the software for your particular example of the measuring device. The code uses a least squares fit to the data which you enter in the the variables Ncal, T_cal[], and cnt_cal[] near the top of tlog.c.
-  To obtain the calibration data, measure the temperature of the device (while it is not changing) (data for T_cal) and simultaneously run "tlog a" to obtain the adc value n (data for cnt_cal). This way obtain a series of ordered pairs and enter them into tlog.c, after deleting the existing data (which is for my device not yours). Place the number of ordered pairs you have in the value for Ncal.
+  To obtain the calibration data, measure the temperature of the device (while it is not changing) (data for T_cal) and simultaneously run "tlog a" to obtain the adc value n (data for cnt_cal). In this way obtain a series of ordered pairs and enter them into tlog.c, after deleting the existing data (which is for my device not yours). Place the number of ordered pairs you have in the value for Ncal.
