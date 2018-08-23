@@ -32,6 +32,6 @@ The LM335Z when wired up this way will change voltage to the ADC at a gradient o
 #### The Code
 
 The code is a simple C program and straight forward to compile;
-`gcc tlog.c -lm -o tlog`
+`gcc tlog.c -lm -o tlog`.
 You will need to calibrate the software for your particular example of the measuring device. The code uses a least squares fit to the data which you enter in the the variables Ncal, T_cal[], and cnt_cal[] near the top of tlog.c.
   To obtain the calibration data, measure the temperature of the device (while it is not changing) (data for T_cal) and simultaneously run "tlog a" to obtain the adc value n (data for cnt_cal). This way obtain a series of ordered pairs and enter them into tlog.c, after deleting the existing data (which is for my device not yours). Place the number of ordered pairs you have in the value for Ncal.
